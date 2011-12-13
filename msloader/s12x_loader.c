@@ -147,12 +147,6 @@ gboolean do_freeems_load(gint port_fd, gint file_fd)
 		free_s19(count);
 		return FALSE;
 	}
-	if (!erase_S12(port_fd))
-	{
-		output("Unable to ERASE device!\n",FALSE);
-		free_s19(count);
-		return FALSE;
-	}
 	if (!send_S12(port_fd,count))
 	{
 		output("Unable to Send firmware to device!\n",FALSE);
